@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleSkillsButton = document.getElementById('toggle-skills') as HTMLButtonElement;
-    const skillsList = document.querySelector('#skills ul') as HTMLUListElement;
+    const skillsList = document.querySelector('#skills-section .skills-list') as HTMLUListElement;
 
-    let skillsVisible = true;
+    let isSkillsVisible = true;
 
     toggleSkillsButton.addEventListener('click', () => {
-        if (skillsVisible) {
+        if (isSkillsVisible) {
             skillsList.style.display = 'none';
             toggleSkillsButton.textContent = 'Show Skills';
         } else {
-            skillsList.style.display = 'block';
+            skillsList.style.display = 'grid';  // Reverts to grid layout
             toggleSkillsButton.textContent = 'Hide Skills';
         }
-        skillsVisible = !skillsVisible;
+        isSkillsVisible = !isSkillsVisible;
     });
 });
